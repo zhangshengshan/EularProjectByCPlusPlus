@@ -33,5 +33,15 @@ int isPalindrome(int n){
 }
 int main ( int argc, char *argv[] )
 {
+    for(int i = 999;i>=100;i--){
+        for(int j=999;j<=i && j>= 100;j--)
+        {
+            if (i*j == isPalindrome(i*j))
+            {
+                cout<<"we got the max Palindrome "<<i*j<<endl;
+                break;
+            }
+        }
+    }
     return EXIT_SUCCESS;
 }				/* ----------  end of function main  ---------- */
