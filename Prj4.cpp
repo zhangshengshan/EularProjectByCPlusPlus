@@ -1,20 +1,3 @@
-/*
- * =====================================================================================
- *
- *       Filename:  Prj4.cpp
- *
- *    Description:  
- *
- *        Version:  1.0
- *        Created:  08/03/2016 08:27:49 PM
- *       Revision:  none
- *       Compiler:  gcc
- *
- *         Author:  YOUR NAME (), 
- *   Organization:  
- *
- * =====================================================================================
- */
 #include <stdlib.h>
 #include <stdlib.h>
 #include <iostream>
@@ -27,21 +10,29 @@ int reverse(int n){
     }
     return num;
 }
-
 int isPalindrome(int n){
     return n == reverse(n) ? 1:0 ;
 }
 int main ( int argc, char *argv[] )
 {
-    for(int i = 999;i>=100;i--){
-        for(int j=999;j<=i && j>= 100;j--)
+    int max = 0;
+    int maxi = 0;
+    int maxj = 0;
+    for(int i = 100;i<=999;i++){
+        for(int j=i; j<=999;j++)
         {
-            if (i*j == isPalindrome(i*j))
+            if (isPalindrome(i*j))
             {
-                cout<<"we got the max Palindrome "<<i*j<<endl;
-                break;
+                if(max < i*j){
+                    max = i*j;
+                    maxi=i;
+                    maxj=j;
+                }
             }
         }
     }
+    cout<<"max is "<<max<<endl;
+    cout<<"maxi is "<<maxi<<endl;
+    cout<<"maxj is "<<maxj<<endl;
     return EXIT_SUCCESS;
-}				/* ----------  end of function main  ---------- */
+}
