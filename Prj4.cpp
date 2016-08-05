@@ -21,6 +21,11 @@ int main ( int argc, char *argv[] )
     for(int i = 100;i<=999;i++){
         for(int j=i; j<=999;j++)
         {
+            if(i*j<max)
+            {
+                break;
+            }
+
             if (isPalindrome(i*j))
             {
                 if(max < i*j){
